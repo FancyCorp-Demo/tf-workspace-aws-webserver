@@ -66,7 +66,7 @@ module "webserver" {
   version = "<= 2.0.0"
 
   packer_bucket_name = var.packer_bucket_name
-  packer_channel     = var.packer_channel
+  packer_channel     = "latest"
 
   instance_type = var.instance_type
 }
