@@ -6,7 +6,7 @@ variable "packer_bucket_name" {
 
 variable "packer_channel" {
   type        = string
-  default     = "production"
+  default     = "latest"
   description = "Which HCP Packer channel should we use for our AMI?"
 }
 
