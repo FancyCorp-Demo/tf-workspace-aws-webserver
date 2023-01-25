@@ -20,8 +20,15 @@ terraform {
   }
 }
 
-variable "aws-account-number" {
-  type = string
+variable "aws-account-name" {
+  type    = string
+  default = "se_demos_dev"
+}
+
+module "account-numbers" {
+  source       = "app.terraform.io/fancycorp/account-numbers/aws"
+  version      = "0.1.0"
+  account_name = var.aws-account-name
 }
 
 variable "aws-region" {
@@ -34,7 +41,7 @@ variable "aws-region" {
 # Essentially a wrapper around Vault dynamic AWS creds
 provider "doormat" {}
 data "doormat_aws_credentials" "creds" {
-  role_arn = "arn:aws:iam::${var.aws-account-number}:role/strawb-tfc-fancycorp-${terraform.workspace}"
+  role_arn = "arn:aws:iam::${module.account-numbers.account_number}:role/strawb-tfc-fancycorp-${terraform.workspace}"
 }
 
 # We will be spinning up resources in AWS
