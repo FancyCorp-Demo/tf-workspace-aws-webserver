@@ -15,3 +15,8 @@ variable "instance_type" {
   default     = "t3.micro"
   description = "How big of an instance should we create?"
 }
+
+variable "aws-region" {
+  type    = string
+  default = "eu-west-2"
+}

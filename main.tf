@@ -13,47 +13,10 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 3.0"
     }
-    doormat = {
-      source  = "doormat.hashicorp.services/hashicorp-security/doormat"
-      version = "~> 0.0.3"
-    }
   }
 }
 
-variable "aws-account-name" {
-  type    = string
-  default = "se_demos_dev"
-}
-
-module "account-numbers" {
-  source       = "app.terraform.io/fancycorp/account-numbers/aws"
-  version      = "0.1.0"
-  account_name = var.aws-account-name
-}
-
-variable "aws-region" {
-  type    = string
-  default = "eu-west-2"
-}
-
-
-# Internal Experimental HashiCorp Provider
-# Essentially a wrapper around Vault dynamic AWS creds
-provider "doormat" {}
-data "doormat_aws_credentials" "creds" {
-  role_arn = "arn:aws:iam::${module.account-numbers.account_number}:role/strawb-tfc-fancycorp-${terraform.workspace}"
-}
-
-# We will be spinning up resources in AWS
-# Define the AWS provider, and add tags that will propagate to all resources
-#
-# Credentials not defined here. Get them with Doormat:
-#
 provider "aws" {
-  access_key = data.doormat_aws_credentials.creds.access_key
-  secret_key = data.doormat_aws_credentials.creds.secret_key
-  token      = data.doormat_aws_credentials.creds.token
-
   default_tags {
     tags = {
       Name      = "StrawbTest - ${terraform.workspace}"
