@@ -1,36 +1,6 @@
 # This file is maintained automatically by "terraform init".
 # Manual edits may be lost in future updates.
 
-provider "doormat.hashicorp.services/hashicorp-security/doormat" {
-  version     = "0.0.3"
-  constraints = "~> 0.0.3"
-  hashes = [
-    "h1:+yV6wiN3PyUp6K7hXSthh1+5bX2PKiFQRCUkVQ3LS5s=",
-    "zh:14f92d0d51c7e1438a56b771798922018d8096cb1e23f67b3f9ff5b1e45fa7cf",
-    "zh:2a61f183803b9ad6eef5f5eb7f2bcf20d03be6dbf9f4ec92404ea06eea06ae00",
-    "zh:470653ed69d0afa0942e606bdfb1521690f056cdf04e10c99fd763dc8307e2b3",
-    "zh:4ca2586a7c70616df46ca170f07a31e059d1cb8ef7e0555b4d57d5e78c0b5258",
-    "zh:511089af513ac6b7989be70bbf2761a8ec6ed6fc1435aa6e44855374cc655e13",
-    "zh:5e837bb6d9c833125bbf39750eef02de05801fd1629021e211c15efb457f36b7",
-    "zh:75df86f705f7d74cce8df793cafee914680b69880ab8856a6841ef5bb6441004",
-    "zh:77a89c5a0c2a43a456f7e18a7ad4297796e281daee5d7873733822fe3a6cec74",
-    "zh:9d2ef21ea05632648e4a96dce5e502ef91a12e97da394906aa581e811c8eee97",
-    "zh:a04f612ed56857684cfc5a9baea2479fc8fd6229cbe6ba60370d982aef22e580",
-    "zh:a915dfaf8116727411e14f13dab950b4d48371900da97d0f3e1f7c937eed032d",
-    "zh:b12b5d4f84f19ea92a6694f4f4b4e89f7e4cf418e21a780176d7f2cdcdebcc01",
-    "zh:b8138df1ebf2dc1bd2c6aa04848d6c69ef354e6aff9b86e737cd5b9dccfaefc0",
-    "zh:c8cca6740eac05da901cbcefbbd681fca0d47f1004abbe21113ff6686b37a301",
-    "zh:d48e7ccd46ae8968197921e4c013a6f96ea05e0af8c0576085a83f292034c065",
-    "zh:d764fc6864d4ca8fb203790be01fe945ce39054a5861214e937a216f733f6373",
-    "zh:db934ad1301cd9bfde2feb313e0203134240ae18e742685ec527e00680b28dd3",
-    "zh:de75c0267621374f085dce07a120a8a848f6b53fe2ca4ce36a9d26dbcc2f5d49",
-    "zh:dfdc96434174a20934a120b5cc4ffea8257eacdd0620c4b41cb77e0aa5a5f418",
-    "zh:e834f49da356d3f7587981a60b8f89f370f1eeb6333b08b773861c1ab05a14b9",
-    "zh:f35fa24348464bf6603ed7ce2951fac44c1fdf9c530119b004f3d12488013f47",
-    "zh:fcd1102113821f1b2e4fe2be9a6c0109ea6e41eedf678203ccba3a03f7c261e8",
-  ]
-}
-
 provider "registry.terraform.io/hashicorp/aws" {
   version     = "3.75.2"
   constraints = "~> 3.0, >= 3.38.0"

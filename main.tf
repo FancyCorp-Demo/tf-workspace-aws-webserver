@@ -39,5 +39,7 @@ module "webserver" {
   packer_channel     = var.packer_channel
 
   instance_type = var.instance_type
+
+  vpc_name = terraform.workspace
 }
 
