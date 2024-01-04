@@ -1,4 +1,3 @@
-# Use https://www.terraform.io/cloud for our State
 terraform {
   cloud {
     organization = "fancycorp"
