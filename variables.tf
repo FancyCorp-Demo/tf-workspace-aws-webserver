@@ -12,7 +12,7 @@ variable "packer_channel" {
 
 variable "instance_type" {
   type        = string
-  default     = "t3.micro"
+  default     = "t3.nano"
   description = "How big of an instance should we create?"
 }
 
