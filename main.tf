@@ -127,3 +127,17 @@ resource "aws_instance" "web" {
     create_before_destroy = true
   }
 }
+
+
+
+# And a Route53 Record
+data "aws_route53_zone" "zone" {
+  name = var.route53_zone
+}
+resource "aws_route53_record" "webserver" {
+  zone_id = data.aws_route53_zone.zone.zone_id
+  name    = aws_instance.web.id
+  type    = "A"
+  ttl     = 300
+  records = [aws_instance.web.public_ip]
+}

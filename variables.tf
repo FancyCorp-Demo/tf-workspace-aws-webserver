@@ -22,3 +22,8 @@ variable "vpc_name" {
   type    = string
   default = "demo"
 }
+
+variable "route53_zone" {
+  type    = string
+  default = "lucy-davinhart.sbx.hashidemos.io"
+}
