@@ -1,13 +1,6 @@
-variable "packer_bucket_name" {
+variable "ami" {
   type        = string
-  default     = "webserver"
-  description = "Which HCP Packer bucket should we pull our AMI from?"
-}
-
-variable "packer_channel" {
-  type        = string
-  default     = "production"
-  description = "Which HCP Packer channel should we use for our AMI?"
+  description = "Which AMI should we use?"
 }
 
 variable "instance_type" {
@@ -19,4 +12,9 @@ variable "instance_type" {
 variable "aws-region" {
   type    = string
   default = "eu-west-2"
+}
+
+variable "vpc_name" {
+  type    = string
+  default = "demo"
 }
