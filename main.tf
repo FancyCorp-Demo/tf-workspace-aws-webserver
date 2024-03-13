@@ -1,5 +1,15 @@
-# Use https://www.terraform.io/cloud for our State
 terraform {
+
+  /*
+  cloud {
+    organization = "fancycorp"
+
+    workspaces {
+      name = "demo-webserver"
+    }
+  }
+*/
+
   required_providers {
     aws = {
       source = "hashicorp/aws"

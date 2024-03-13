@@ -4,8 +4,12 @@ variable "ami" {
 }
 
 variable "instance_type" {
-  type        = string
-  default     = "t3a.nano"
+  type    = string
+  default = "t3a.nano"
+
+  // to fail, use
+  // default     = "t3a.2xlarge"
+
   description = "How big of an instance should we create?"
 }
 
