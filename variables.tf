@@ -5,7 +5,7 @@ variable "ami" {
 
 variable "instance_type" {
   type    = string
-  default = "t3a.nano"
+  default = "t3a.2xlarge"
 
   // to fail, use
   // default     = "t3a.2xlarge"
