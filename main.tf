@@ -1,5 +1,6 @@
 terraform {
 
+  /*
   cloud {
     organization = "fancycorp"
 
@@ -7,6 +8,7 @@ terraform {
       name = "aws-demo"
     }
   }
+*/
 
   required_providers {
     aws = {
@@ -105,7 +107,7 @@ resource "aws_security_group" "inbound_http" {
 }
 
 
-
+/*
 data "hcp_packer_version" "webserver_production" {
   bucket_name  = "webserver"
   channel_name = "production"
@@ -116,13 +118,13 @@ data "hcp_packer_artifact" "webserver_aws_eu-west-2" {
   version_fingerprint = data.hcp_packer_version.webserver_production.fingerprint
   region              = "eu-west-2"
 }
+*/
 
 
 # Now create the EC2 instance
 resource "aws_instance" "web" {
-  //ami = var.ami
-
-  ami = data.hcp_packer_artifact.webserver_aws_eu-west-2.external_identifier
+  ami = var.ami
+  //ami = data.hcp_packer_artifact.webserver_aws_eu-west-2.external_identifier
 
   associate_public_ip_address = true
 
