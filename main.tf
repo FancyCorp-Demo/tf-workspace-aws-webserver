@@ -32,7 +32,7 @@ provider "aws" {
 
 module "webserver" {
   source  = "app.terraform.io/fancycorp/webserver/aws"
-  version = "<= 2.0.0"
+  version = "~> 2.0"
 
   packer_bucket_name = var.packer_bucket_name
   packer_channel     = var.packer_channel
