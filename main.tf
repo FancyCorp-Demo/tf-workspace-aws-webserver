@@ -41,4 +41,3 @@ module "webserver" {
 
   vpc_name = terraform.workspace
 }
-
