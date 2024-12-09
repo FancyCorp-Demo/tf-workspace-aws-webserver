@@ -21,7 +21,7 @@ provider "aws" {
       Name      = "StrawbTest - ${terraform.workspace}"
       Owner     = "lucy.davinhart@hashicorp.com"
       Purpose   = "Terraform TFC Demo Org (FancyCorp)"
-      TTL       = "24h"
+      TTL       = "testing"
       Terraform = "true"
       Source    = "https://github.com/FancyCorp-Demo/tf-workspace-aws-webserver"
       Workspace = terraform.workspace
